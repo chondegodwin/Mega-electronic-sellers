@@ -1,1 +1,1 @@
-Add HP laptop.jpg
+Delete all files
