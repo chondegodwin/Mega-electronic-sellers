@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - MEGA ELECTRONICS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-image: url("tech.jpg");
+      font-family: Arial, sans-serif;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: azure;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-info, .contact-form {
+      margin-bottom: 30px;
+    }
+
+    .contact-info h2, .contact-form h2 {
+      color: #333;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .social-icons a {
+      margin: 10px;
+      font-size: 24px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #444;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .social-icons a {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="service.html">Service</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><strong>Phone:</strong> +255 624122836</p>
+      <p><strong>Email:</strong> chondegodwin@gmail.com</p>
+
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank">🌐 Facebook</a>
+        <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+        <a href="https://youtube.com" target="_blank">▶️ YouTube</a>
+        
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm" onsubmit="return validateForm()">
+        <input type="text" id="fname" name="fname" placeholder="First Name">
+        <input type="text" id="lname" name="lname" placeholder="Last Name">
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+        <input type="email" id="email" name="email" placeholder="Email Address">
+        <textarea id="message" name="message" placeholder="Your Message" rows="5"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Map -->
+    <section>
+      <h2>Visit Our Office</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.879970543387!2d35.69210757418881!3d-7.770876276948008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x190c743e92b9f59d%3A0x9985ffdbadf17e27!2sIringa%20Municipality!5e0!3m2!1sen!2stz!4v1718306727114"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+  </div>
+
+  <script>
+    function validateForm() {
+      const fname = document.getElementById("fname").value.trim();
+      const lname = document.getElementById("lname").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if (fname === "" || lname === "" || phone === "" || email === "") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      const phonePattern = /^[0-9]{9,15}$/;
+      if (!phone.match(phonePattern)) {
+        alert("Please enter a valid phone number (digits only).");
+        return false;
+      }
+
+      alert("Message sent successfully!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
